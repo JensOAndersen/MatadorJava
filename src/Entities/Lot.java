@@ -43,8 +43,8 @@ public class Lot extends BaseField {
                 }
             }
         } else { //if the field already has an owner
-            p.Message("paid " + rent + " as rent to " + owner.GetName() +" for landing on " + name+"!");
-            owner.DepositToAccount(p.WithdrawFromAccount(rent));
+            p.Message("paid " + getRent() + " as rent to " + owner.GetName() +" for landing on " + name+"!");
+            owner.DepositToAccount(p.WithdrawFromAccount(getRent()));
         }
     }
 

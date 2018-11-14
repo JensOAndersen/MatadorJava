@@ -31,11 +31,20 @@ public class MatadorGame {
             for (int i = 0; i <amountOfPlayers; i++){
                 System.out.println("Please write the name for player " + (i+1));
                 String name = s.nextLine();
-                players.add(new Player(name));
+                addPlayer(new Player(name));
             }
+
+            setupFields();
+
+            //start the game!
+            start();
         } else {
             System.out.println("You cant play Matador alone, or with no players, exiting setup of the current game");
         }
+    }
+
+    public void start(){
+
     }
 
     private void addPlayer(Player p){
@@ -51,5 +60,13 @@ public class MatadorGame {
 //             i++) {
 //            p.Position(1);
 //        }
+    }
+
+    private void setupFields(){
+        gameBoard.add(new Start("start",4000));
+        gameBoard.add(new Street("Rødovrevej",1200, 120));
+        gameBoard.add(new Street("Hvidovrevej",1200,120));
+        gameBoard.add(new ShipLine("Øresund A/S",4000,400));
+        gameBoard.add(new Street("Roskildevej",2000,200));
     }
 }
