@@ -32,21 +32,21 @@ public class Player {
 
     //methods
 
-    public void SendMoneyToPlayer(Player p, double amount){
-        p.DepositToAccount( //withdraws from this player account and deposits to another players account
-                this.WithdrawFromAccount(amount)
+    public void sendMoneyToPlayer(Player p, double amount){
+        p.depositToAccount( //withdraws from this player account and deposits to another players account
+                this.withdrawFromAccount(amount)
         );
     }
 
     //TODO: Handle negative balance on the account, take a player from the game and distribute his belongings
     //maybe: sell one of this belongings and deposit the value into the players account and retry selling
     //the easy way would be to sell belongings to the bank, instead of another player
-    public double WithdrawFromAccount(double amount){
+    public double withdrawFromAccount(double amount){
         account -= amount;
         return amount;
     }
 
-    public void DepositToAccount(double amount){
+    public void depositToAccount(double amount){
         account += amount;
     }
 
@@ -56,7 +56,7 @@ public class Player {
     }
 
     //Used to ask the player a question, all calls to this method must end with a questionmark
-    public Boolean AskQuestion(String msg){
+    public Boolean askQuestion(String msg){
         System.out.println(this.name + ", please answer the question: ");
         System.out.println(msg);
 

@@ -58,9 +58,9 @@ public class MatadorGame {
                             //refactor maybe, seems a bit iffy
                             //TODO:Think about how this would work any differently
                             //TODO:make a gameboard object to handle passed and landed
-                            gameBoard.get(currentPlayer.getPosition()%gameBoard.size()).Landed(currentPlayer);
+                            gameBoard.get(currentPlayer.getPosition()%gameBoard.size()).landed(currentPlayer);
                         } else {
-                            gameBoard.get(currentPlayer.getPosition()%gameBoard.size()).Passed(currentPlayer);
+                            gameBoard.get(currentPlayer.getPosition()%gameBoard.size()).passed(currentPlayer);
                         }
                     }
                     if(currentPlayer.getBalance() < 0){ //remove player from game if his balance is 0 or less

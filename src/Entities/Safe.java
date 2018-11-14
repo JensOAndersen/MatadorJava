@@ -10,9 +10,9 @@ public class Safe extends BaseField {
 
     //override super landed, to message as well as deposit money into the players account
     @Override
-    public void Landed(Player p) {
-        super.Landed(p);
-        p.DepositToAccount(reward);
+    public void landed(Player p) {
+        super.landed(p);
+        p.depositToAccount(reward);
         p.message(p.getName()+" received " + reward + " as reward.");
     }
 

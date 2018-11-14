@@ -7,9 +7,16 @@ public class Start extends Safe {
 
     //override passed method, so the player receives a reward when passing
     @Override
-    public void Passed(Player p) {
-        super.Passed(p);
-        p.DepositToAccount(reward);
-        p.message("Has recived " + reward + "as reward for passing by.");
+    public void passed(Player p) {
+        super.passed(p);
+        p.depositToAccount(reward);
+        p.message("Has received " + reward + " as reward for passing by.");
+    }
+
+    @Override
+    public void landed(Player p){
+        super.landed(p);
+        p.message("For landing on " + name + " you receive an additional reward of kr:" + reward/2);
+        p.depositToAccount(reward/2);
     }
 }

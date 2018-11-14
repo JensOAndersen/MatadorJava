@@ -7,11 +7,11 @@ abstract class BaseField {
         this.name = name;
     }
 
-    public void Passed(Player p){
+    public void passed(Player p){
         p.message("Just passed: " + name);
     }
 
-    public void Landed(Player p){
+    public void landed(Player p){
         p.message("Just Landed on: " + name);
     }
 
