@@ -30,7 +30,7 @@ public class Lot extends BaseField {
     @Override
     public void Landed(Player p) {
         super.Landed(p);
-        if (owner  == null){ //if the field doesnt have an owner, ask the player if he wants to buy it
+        if (owner == null){ //if the field doesnt have an owner, ask the player if he wants to buy it
             System.out.println(name + " currently has no owner.");
             if (p.AskQuestion("Do you want to buy it for kr:"+price+"?, your current balance is: " + p.getBalance())){
 
@@ -42,9 +42,11 @@ public class Lot extends BaseField {
                     p.message("Currently doesn't have another money to buy " + name);
                 }
             }
-        } else { //if the field already has an owner
+        } else if(p != owner) { //if the field already has an owner
             p.message("paid " + getRent() + " as rent to " + owner.getName() +" for landing on " + name+"!");
             owner.DepositToAccount(p.WithdrawFromAccount(getRent()));
+        } else {
+            p.message("Owns " + name + " take a rest and enjoy a cup of coffee");
         }
     }
 
