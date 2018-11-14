@@ -13,7 +13,7 @@ public class Safe extends BaseField {
     public void Landed(Player p) {
         super.Landed(p);
         p.DepositToAccount(reward);
-        p.Message(p.GetName()+" received " + reward + " as reward.");
+        p.message(p.getName()+" received " + reward + " as reward.");
     }
 
 }

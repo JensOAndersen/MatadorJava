@@ -10,6 +10,6 @@ public class Start extends Safe {
     public void Passed(Player p) {
         super.Passed(p);
         p.DepositToAccount(reward);
-        p.Message("Has recived " + reward + "as reward for passing by.");
+        p.message("Has recived " + reward + "as reward for passing by.");
     }
 }

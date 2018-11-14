@@ -17,8 +17,8 @@ public class Player {
     }
     //getters and setters
 
-    public double GetBalance(){return account;}
-    public String GetName(){return name;}
+    public double getBalance(){return account;}
+    public String getName(){return name;}
 
     //overloading the method to make a get-set method, miiight be beautified a bit
     //TODO: beautify this crap
@@ -51,7 +51,7 @@ public class Player {
     }
 
     //prints out a message
-    public void Message(String msg){
+    public void message(String msg){
         System.out.println(this.name + ": " + msg);
     }
 

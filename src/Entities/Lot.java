@@ -35,15 +35,15 @@ public class Lot extends BaseField {
             if (p.AskQuestion("Do you want to buy it?")){
 
                 //if the player doesnt have enough money he'll be told so
-                if (p.GetBalance() >= price){
+                if (p.getBalance() >= price){
                     p.WithdrawFromAccount(price);
                     owner = p;
                 } else {
-                    p.Message("Currently doesn't have another money to buy " + name);
+                    p.message("Currently doesn't have another money to buy " + name);
                 }
             }
         } else { //if the field already has an owner
-            p.Message("paid " + getRent() + " as rent to " + owner.GetName() +" for landing on " + name+"!");
+            p.message("paid " + getRent() + " as rent to " + owner.getName() +" for landing on " + name+"!");
             owner.DepositToAccount(p.WithdrawFromAccount(getRent()));
         }
     }

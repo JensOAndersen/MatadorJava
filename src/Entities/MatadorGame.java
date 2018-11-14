@@ -43,8 +43,18 @@ public class MatadorGame {
         }
     }
 
+    //main game loop is running in this method;
     public void start(){
+        int nOfPlayers = players.size();
+        ArrayList<Player> currentPlayers = new ArrayList<>(players);
+        Player winningPlayer;
 
+        while(nOfPlayers > 1){
+
+        }
+        winningPlayer = currentPlayers.get(0);
+
+        winningPlayer.message("Congratulations, you won the game with account balance: " + winningPlayer.getBalance());
     }
 
     private void addPlayer(Player p){
@@ -53,15 +63,15 @@ public class MatadorGame {
 
     private void takeTurn(){
         Player p = players.get(currentPlayer);
-        System.out.println("It is " + p.GetName()+"'s turn!");
-        p.Message("Rolls the dice, he hits a " + dice.RollDie());
+        System.out.println("It is " + p.getName()+"'s turn!");
+        p.message("Rolls the dice, he hits a " + dice.rollDie());
 
 //        for (int i = 0; i <= dice.getValue();
 //             i++) {
 //            p.Position(1);
 //        }
     }
-    
+
     //would be pretty nice to be able to read this from a config file or something
     private void setupFields(){
         gameBoard.add(new Start("start",4000));

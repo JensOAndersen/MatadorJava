@@ -13,14 +13,14 @@ public class Street extends Lot {
     public void Landed(Player p) {
         //check if owner is p
         if(getOwner() == p){
-            p.Message("Just landed on: " + name); // somehow i want to make some logic that removes this line, as its identical to the line in BaseField.java
-            p.Message("Owns " + name);
+            p.message("Just landed on: " + name); // somehow i want to make some logic that removes this line, as its identical to the line in BaseField.java
+            p.message("Owns " + name);
             if (p.AskQuestion("Do you want to buy a house on " + name + "?")){ //ask if the player wants to buy the house
-                if(p.GetBalance() >= housePrice){ //make sure we've got enough money to buy the house
+                if(p.getBalance() >= housePrice){ //make sure we've got enough money to buy the house
                     p.WithdrawFromAccount(housePrice);
                     numberOfHouses++;
                 } else {
-                    p.Message("Doesn't have enough money to buy " + name);
+                    p.message("Doesn't have enough money to buy " + name);
                 }
             }
         } else {

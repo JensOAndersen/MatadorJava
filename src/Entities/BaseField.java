@@ -8,11 +8,11 @@ abstract class BaseField {
     }
 
     public void Passed(Player p){
-        p.Message("Just passed: " + name);
+        p.message("Just passed: " + name);
     }
 
     public void Landed(Player p){
-        p.Message("Just Landed on: " + name);
+        p.message("Just Landed on: " + name);
     }
 
 }
