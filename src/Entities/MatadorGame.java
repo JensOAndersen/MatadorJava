@@ -64,7 +64,7 @@ public class MatadorGame {
                         }
                     }
                     if(currentPlayer.getBalance() < 0){ //remove player from game if his balance is 0 or less
-                                                        //TODO: make it possible to sell off properties for a player
+                                                        //TODO: make it possible to sell off properties to a player
                         currentPlayer.message("You are bankrupt, and as such are being removed from the game");
                         currentPlayers.remove(currentPlayer);
                         nOfPlayers--; //maybe set nOfPlayers to size() of currentPlayers.
@@ -93,7 +93,7 @@ public class MatadorGame {
         gameBoard.add(new Safe(2000.0,"Besøg i Fængsel"));
         gameBoard.add(new Street("Frederiksberg Alle",2800,280));
         gameBoard.add(new Street("Bülowsvej",2800,280));
-        gameBoard.add(new ShipLine("A/S Grenaa Hundested færgefart",4000,400));
+        gameBoard.add(new ShipLine("A/S Grenaa-Hundested færgefart",4000,400));
         gameBoard.add(new Street("Bernstorffsvej",3600,360));
         gameBoard.add(new Street("Hellerupvej",3600,360));
         gameBoard.add(new Street("Strandvej",4000,400));
@@ -108,7 +108,7 @@ public class MatadorGame {
         gameBoard.add(new Street("Amagertorv",6000,600));
         gameBoard.add(new Street("Vimmelskaftet",6000,600));
         gameBoard.add(new Street("Nygade",6400,640));
-        gameBoard.add(new Street("Skandinavisk Linfetrafik A/S",4000,400));
+        gameBoard.add(new ShipLine("Skandinavisk Linfetrafik A/S",4000,400));
         gameBoard.add(new Street("Frederiksberggade",7000,700));
         gameBoard.add(new Street("Rådhuspladsen",8000,800));
 
