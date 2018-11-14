@@ -15,8 +15,8 @@ public class Player {
             throw new IllegalArgumentException("Name cannot be whitespace");
         }
     }
-    //getters and setters
 
+    //getters and setters
     public double getBalance(){return account;}
     public String getName(){return name;}
 
@@ -31,7 +31,6 @@ public class Player {
     }
 
     //methods
-
     public void sendMoneyToPlayer(Player p, double amount){
         p.depositToAccount( //withdraws from this player account and deposits to another players account
                 this.withdrawFromAccount(amount)
