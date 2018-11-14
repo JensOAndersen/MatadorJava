@@ -61,12 +61,37 @@ public class MatadorGame {
 //            p.Position(1);
 //        }
     }
-
+    
+    //would be pretty nice to be able to read this from a config file or something
     private void setupFields(){
         gameBoard.add(new Start("start",4000));
         gameBoard.add(new Street("Rødovrevej",1200, 120));
         gameBoard.add(new Street("Hvidovrevej",1200,120));
         gameBoard.add(new ShipLine("Øresund A/S",4000,400));
         gameBoard.add(new Street("Roskildevej",2000,200));
+        gameBoard.add(new Street("Valby Langgade",2000,200));
+        gameBoard.add(new Street("Allégade",2400,240));
+        gameBoard.add(new Safe(2000.0,"Besøg i Fængsel"));
+        gameBoard.add(new Street("Frederiksberg Alle",2800,280));
+        gameBoard.add(new Street("Bülowsvej",2800,280));
+        gameBoard.add(new ShipLine("A/S Grenaa Hundested færgefart",4000,400));
+        gameBoard.add(new Street("Bernstorffsvej",3600,360));
+        gameBoard.add(new Street("Hellerupvej",3600,360));
+        gameBoard.add(new Street("Strandvej",4000,400));
+        gameBoard.add(new Safe(2000.0,"Parkering"));
+        gameBoard.add(new Street("Trianglen",4400,400));
+        gameBoard.add(new Street("Østerbrogade",4400,440));
+        gameBoard.add(new Street("Grønningen",4800,480));
+        gameBoard.add(new ShipLine("Mols Linien A/S",4000,400));
+        gameBoard.add(new Street("Bredgade",5200,520));
+        gameBoard.add(new Street("Kgs. Nytorv",5200,520));
+        gameBoard.add(new Street("Østergade",5600,560));
+        gameBoard.add(new Street("Amagertorv",6000,600));
+        gameBoard.add(new Street("Vimmelskaftet",6000,600));
+        gameBoard.add(new Street("Nygade",6400,640));
+        gameBoard.add(new Street("Skandinavisk Linfetrafik A/S",4000,400));
+        gameBoard.add(new Street("Frederiksberggade",7000,700));
+        gameBoard.add(new Street("Rådhuspladsen",8000,800));
+
     }
 }
