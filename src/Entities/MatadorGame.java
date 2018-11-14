@@ -48,9 +48,29 @@ public class MatadorGame {
         int nOfPlayers = players.size();
         ArrayList<Player> currentPlayers = new ArrayList<>(players);
         Player winningPlayer;
-
         while(nOfPlayers > 1){
-
+            for (Player currentPlayer : players) {
+                if(currentPlayers.contains(currentPlayer)){
+                    currentPlayer.message("Rolls the dice, he rolled: " + dice.rollDie());
+                    for (int i = 1; i <= dice.getValue(); i++){
+                        currentPlayer.setPosition(1);
+                        if ( i == dice.getValue()){
+                            //refactor maybe, seems a bit iffy
+                            //TODO:Think about how this would work any differently
+                            //TODO:make a gameboard object to handle passed and landed
+                            gameBoard.get(currentPlayer.getPosition()%gameBoard.size()).Landed(currentPlayer);
+                        } else {
+                            gameBoard.get(currentPlayer.getPosition()%gameBoard.size()).Passed(currentPlayer);
+                        }
+                    }
+                    if(currentPlayer.getBalance() < 0){ //remove player from game if his balance is 0 or less
+                                                        //TODO: make it possible to sell off properties for a player
+                        currentPlayer.message("You are bankrupt, and as such are being removed from the game");
+                        currentPlayers.remove(currentPlayer);
+                        nOfPlayers--; //maybe set nOfPlayers to size() of currentPlayers.
+                    }
+                }
+            }
         }
         winningPlayer = currentPlayers.get(0);
 
@@ -59,17 +79,6 @@ public class MatadorGame {
 
     private void addPlayer(Player p){
         players.add(p);
-    }
-
-    private void takeTurn(){
-        Player p = players.get(currentPlayer);
-        System.out.println("It is " + p.getName()+"'s turn!");
-        p.message("Rolls the dice, he hits a " + dice.rollDie());
-
-//        for (int i = 0; i <= dice.getValue();
-//             i++) {
-//            p.Position(1);
-//        }
     }
 
     //would be pretty nice to be able to read this from a config file or something

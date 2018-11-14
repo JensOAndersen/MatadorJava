@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Player {
     private String name = "";
-    private double account = 0;
+    private double account = 4000;
     private int fieldPos = 0;
 
     //constructor
@@ -22,10 +22,10 @@ public class Player {
 
     //overloading the method to make a get-set method, miiight be beautified a bit
     //TODO: beautify this crap
-    public int Position(){
+    public int getPosition(){
         return fieldPos;
     }
-    public int Position(int distance){
+    public int setPosition(int distance){
         fieldPos += distance;
         return 0;
     }

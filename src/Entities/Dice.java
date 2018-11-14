@@ -8,7 +8,7 @@ public class Dice {
     int value = 0;
 
     public int rollDie(){
-        value = rnd.nextInt(6);
+        value = rnd.nextInt(6)+1;
         return value;
     }
 

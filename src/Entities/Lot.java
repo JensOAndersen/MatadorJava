@@ -32,7 +32,7 @@ public class Lot extends BaseField {
         super.Landed(p);
         if (owner  == null){ //if the field doesnt have an owner, ask the player if he wants to buy it
             System.out.println(name + " currently has no owner.");
-            if (p.AskQuestion("Do you want to buy it?")){
+            if (p.AskQuestion("Do you want to buy it for kr:"+price+"?")){
 
                 //if the player doesnt have enough money he'll be told so
                 if (p.getBalance() >= price){
